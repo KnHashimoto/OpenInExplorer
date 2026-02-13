@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Google Chat - エクスプローラーで開く",
+  "version": "1.0.0",
+  "description": "Google Chatで選択したパスを右クリックからエクスプローラーで開きます",
+  "permissions": [
+    "contextMenus",
+    "nativeMessaging",
+    "activeTab",
+    "scripting",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://chat.google.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

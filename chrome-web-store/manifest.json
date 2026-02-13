@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Google Chat - エクスプローラーで開く",
+  "version": "1.0.0",
+  "description": "Google Chat（や他のページ）で選択したファイル・フォルダパスを右クリックからエクスプローラーで開きます。Windows用。ネイティブホストのセットアップが必要です。",
+  "permissions": [
+    "contextMenus",
+    "nativeMessaging",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://chat.google.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
