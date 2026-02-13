@@ -8,8 +8,7 @@ if not exist "%ID_FILE%" (
     echo [エラー] extension_id.txt が見つかりません。
     echo.
     echo このフォルダ内に extension_id.txt があるか確認してください。
-    pause
-    exit /b 1
+    goto :end
 )
 
 set "EXT_ID="
@@ -28,8 +27,7 @@ if "!EXT_ID!"=="" (
     echo # で始まる行はコメントです。コメントの「下の1行」に、32文字のIDだけを書いて保存してください。
     echo.
     start notepad "%ID_FILE%"
-    pause
-    exit /b 1
+    goto :end
 )
 
 cd /d "%SCRIPT_DIR%native_host"
@@ -43,10 +41,11 @@ if !PS_RESULT! neq 0 (
     echo extension_id.txt を確認し、# で始まらない行に32文字の英小文字のIDだけが書かれているか確認してください。
     echo.
     start notepad "%ID_FILE%"
-    pause
-    exit /b 1
+    goto :end
 )
 
 echo.
 echo ネイティブホストの登録が完了しました。
+
+:end
 pause
