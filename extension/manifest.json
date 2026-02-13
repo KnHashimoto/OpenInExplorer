@@ -8,15 +8,33 @@
     "48": "icon.png",
     "128": "icon.png"
   },
+  "commands": {
+    "open-in-explorer": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+E"
+      },
+      "description": "選択したパスをエクスプローラーで開く"
+    }
+  },
   "permissions": [
     "contextMenus",
     "nativeMessaging",
     "activeTab",
+    "tabs",
     "scripting",
     "notifications"
   ],
   "host_permissions": [
-    "https://chat.google.com/*"
+    "https://chat.google.com/*",
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
   ],
   "background": {
     "service_worker": "background.js"
