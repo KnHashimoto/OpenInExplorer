@@ -6,6 +6,8 @@ param(
     [string]$ExtensionId
 )
 
+$ExtensionId = $ExtensionId.Trim()
+
 $HostName = "com.googlechat.openinexplorer"
 $ScriptDir = $PSScriptRoot
 $BatPath = Join-Path $ScriptDir "run_host.bat"

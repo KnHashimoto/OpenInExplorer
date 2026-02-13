@@ -1,9 +1,9 @@
 ﻿{
-    "path":  "D:\\WebApp\\Chrome_add-on\\native_host\\run_host.bat",
+    "path":  "D:\\WebApp\\Chrome_add-on\\OpenInExplorer\\native_host\\run_host.bat",
     "description":  "Open selected path in Explorer from Google Chat",
     "name":  "com.googlechat.openinexplorer",
     "allowed_origins":  [
-                            "chrome-extension://ajdgeocdcibicapeokkhiglnngiapelk/"
+                            "chrome-extension://olhackeipjnmfjlicbbmplheodejilaj/"
                         ],
     "type":  "stdio"
 }
