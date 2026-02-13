@@ -44,7 +44,7 @@ function openPathInExplorer(path, tab) {
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
     id: 'open-in-explorer',
-    title: 'エクスプローラーで開く',
+    title: 'エクスプローラーで開く (Ctrl+Shift+E)',
     contexts: ['selection']
   });
 });
