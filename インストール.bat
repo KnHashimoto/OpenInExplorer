@@ -14,19 +14,18 @@ if not exist "%ID_FILE%" (
 
 set "EXT_ID="
 for /f "usebackq tokens=* delims=" %%a in ("%ID_FILE%") do (
-    set "EXT_ID=%%a"
-    goto :got_id
+    set "line=%%a"
+    if "!line:~0,1!" neq "#" (
+        set "EXT_ID=%%a"
+        goto :got_id
+    )
 )
 :got_id
 
 if "!EXT_ID!"=="" (
-    echo [エラー] extension_id.txt の1行目に拡張機能IDを記入してください。
+    echo [エラー] extension_id.txt に拡張機能IDを記入してください。
     echo.
-    echo 手順:
-    echo   1. Chrome で chrome://extensions を開く
-    echo   2. 「Google Chat - エクスプローラーで開く」の ID をコピー
-    echo   3. extension_id.txt を開き、1行目に貼り付けて上書き保存
-    echo   4. このバッチを再度ダブルクリック
+    echo # で始まる行はコメントです。コメントの「下の1行」に、32文字のIDだけを書いて保存してください。
     echo.
     start notepad "%ID_FILE%"
     pause
@@ -40,7 +39,10 @@ cd /d "%SCRIPT_DIR%"
 
 if !PS_RESULT! neq 0 (
     echo.
-    echo 登録に失敗しました。extension_id.txt のIDが正しいか確認してください。
+    echo 登録に失敗しました。拡張機能IDが正しくない可能性があります。
+    echo extension_id.txt を確認し、# で始まらない行に32文字の英小文字のIDだけが書かれているか確認してください。
+    echo.
+    start notepad "%ID_FILE%"
     pause
     exit /b 1
 )

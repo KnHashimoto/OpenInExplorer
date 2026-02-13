@@ -1,1 +1,6 @@
+# chrome://extensions で表示される「拡張機能のID」（32文字の英小文字）を、
+# これらコメント行の下に書いて保存してください。
+# 例: olhackeipjnmfjlicbbmplheodejilaj
+# ----------------------------------------
+# 上記のコメント行（#で始まる行）は触らず、この下の1行にIDを記入してください：
 olhackeipjnmfjlicbbmplheodejilaj
